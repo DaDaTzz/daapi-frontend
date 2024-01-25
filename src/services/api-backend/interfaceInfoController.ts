@@ -17,6 +17,21 @@ export async function addInterfaceInfoUsingPost(
   });
 }
 
+/** checkInterfaceInfo POST /api/interfaceInfo/checkInterfaceInfo */
+export async function checkInterfaceInfoUsingPost(
+  body: API.CheckInterfaceInfoRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.InterfaceInfo>('/api/interfaceInfo/checkInterfaceInfo', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
 /** deleteInterfaceInfo POST /api/interfaceInfo/delete */
 export async function deleteInterfaceInfoUsingPost(
   body: API.DeleteRequest,

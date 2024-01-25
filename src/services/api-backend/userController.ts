@@ -14,6 +14,21 @@ export async function addUserUsingPost(body: API.UserAddRequest, options?: { [ke
   });
 }
 
+/** checkPower POST /api/user/checkPower */
+export async function checkPowerUsingPost(
+  body: API.CheckPowerRequest,
+  options?: { [key: string]: any },
+) {
+  return request<string>('/api/user/checkPower', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
 /** deleteUser POST /api/user/delete */
 export async function deleteUserUsingPost(
   body: API.DeleteRequest,
